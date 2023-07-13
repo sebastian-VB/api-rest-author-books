@@ -18,8 +18,6 @@ public class AuthorService {
 
     @Autowired
     private AuthorRepository authorRepository;
-    @Autowired
-    private BookRepository bookRepository;
 
     HashMap<String, Object> information_returned;
 
