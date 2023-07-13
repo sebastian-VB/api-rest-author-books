@@ -16,7 +16,7 @@ public class Book {
     @Column(name = "book_id")
     private int id;
     @NotNull
-    private String name;
+    private String nameBook;
     private int number_vol;
     @NotNull
     private LocalDate publication_date;
@@ -41,12 +41,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameBook() {
+        return nameBook;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameBook(String nameBook) {
+        this.nameBook = nameBook;
     }
 
     public int getNumber_vol() {

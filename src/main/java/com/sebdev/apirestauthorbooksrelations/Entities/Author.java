@@ -14,9 +14,9 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "author_id")
     private int id;
-    private String name;
     @NotNull
-    private String artistic_name;
+    private String nameAuthor;
+    private String artisticName;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -38,20 +38,20 @@ public class Author {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameAuthor() {
+        return nameAuthor;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameAuthor(String nameAuthor) {
+        this.nameAuthor = nameAuthor;
     }
 
-    public String getArtistic_name() {
-        return artistic_name;
+    public String getArtisticName() {
+        return artisticName;
     }
 
-    public void setArtistic_name(String artistic_name) {
-        this.artistic_name = artistic_name;
+    public void setArtisticName(String artisticName) {
+        this.artisticName = artisticName;
     }
 
     public Set<Book> getBooks() {

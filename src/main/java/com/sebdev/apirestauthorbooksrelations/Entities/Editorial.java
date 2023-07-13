@@ -15,7 +15,7 @@ public class Editorial {
     @Column(name = "editorial_id")
     private int id;
     @NotNull
-    private String name;
+    private String nameEditorial;
     @NotNull
     private String street;
     @NotNull
@@ -37,12 +37,12 @@ public class Editorial {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNameEditorial() {
+        return nameEditorial;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameEditorial(String nameEditorial) {
+        this.nameEditorial = nameEditorial;
     }
 
     public String getStreet() {
