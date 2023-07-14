@@ -30,7 +30,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveAuthor(@RequestBody Author author){
+    public ResponseEntity<Object> saveAuthor(@Valid @RequestBody Author author){
         return authorService.saveAuthor(author);
     }
 

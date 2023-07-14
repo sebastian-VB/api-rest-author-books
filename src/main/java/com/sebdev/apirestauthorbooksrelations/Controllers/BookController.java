@@ -2,6 +2,7 @@ package com.sebdev.apirestauthorbooksrelations.Controllers;
 
 import com.sebdev.apirestauthorbooksrelations.Entities.Book;
 import com.sebdev.apirestauthorbooksrelations.Services.BookService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveBook(@RequestBody Book book){
+    public ResponseEntity<Object> saveBook(@Valid @RequestBody Book book){
         return bookService.saveBook(book);
     }
 
