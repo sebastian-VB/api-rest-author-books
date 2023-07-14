@@ -64,7 +64,7 @@ public class BookService {
         book.setAntiquity(Period.between(book.getPublication_date(), LocalDate.now()).getYears());
         bookRepository.save(book);
 
-        return new ResponseEntity<>(information_returned, HttpStatus.OK);
+        return new ResponseEntity<>(information_returned, HttpStatus.CREATED);
     }
 
     //queda pendiente el actualizar
