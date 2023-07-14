@@ -1,5 +1,6 @@
 package com.sebdev.apirestauthorbooksrelations.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -22,6 +23,7 @@ public class Book {
     private LocalDate publication_date;
     private int antiquity;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;

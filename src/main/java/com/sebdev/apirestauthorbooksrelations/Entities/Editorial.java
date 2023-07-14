@@ -1,5 +1,7 @@
 package com.sebdev.apirestauthorbooksrelations.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -22,6 +24,7 @@ public class Editorial {
     private String city;
     private String location;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "editorial", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
 

@@ -4,7 +4,6 @@ import com.sebdev.apirestauthorbooksrelations.Entities.Editorial;
 import com.sebdev.apirestauthorbooksrelations.Repositories.EditorialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -65,7 +64,7 @@ public class EditorialService {
         editorial.setLocation(location);
         editorialRepository.save(editorial);
 
-        return new RequestEntity<>(information_requested, HttpStatus.CREATED);
+        return new ResponseEntity<>(information_requested, HttpStatus.CREATED);
     }
 
     public ResponseEntity<Object> updateEditorial(Editorial editorial, Integer id){
