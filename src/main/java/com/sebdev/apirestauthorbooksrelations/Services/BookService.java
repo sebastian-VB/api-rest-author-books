@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -58,6 +60,8 @@ public class BookService {
         information_returned = new LinkedHashMap<>();
         information_returned.put("error", false);
         information_returned.put("message", "Libro se guardó con exito");
+
+        book.setAntiquity(Period.between(book.getPublication_date(), LocalDate.now()).getYears());
         bookRepository.save(book);
 
         return new ResponseEntity<>(information_returned, HttpStatus.OK);
